@@ -543,7 +543,7 @@ app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
 });
 
-app.get("/api/:albumName", (request, response) => {
+app.get("/api", (request, response) => {
   // const albumName = request.params.albumName.toLowerCase();
   // if (jayzDiscography.albums[albumName]) {
   //   response.json(jayzDiscography.albums[albumName]);
@@ -556,3 +556,5 @@ app.get("/api/:albumName", (request, response) => {
 app.listen(process.env.PORT || PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
+
+// ":albumName"

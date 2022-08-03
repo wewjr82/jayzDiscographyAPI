@@ -527,15 +527,15 @@ let jayzDiscography = {
       imgUrl:
         "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/4-44_album_cover.png/220px-4-44_album_cover.png",
     },
-    unknown: {
-      released: "unknown",
-      length: "unknown",
-      label: "unknown",
-      producers: ["unknown"],
-      certifications: "unknown",
-      tracklisting: ["unknown"],
-      imgUrl: "unknown",
-    },
+    // unknown: {
+    //   released: "unknown",
+    //   length: "unknown",
+    //   label: "unknown",
+    //   producers: ["unknown"],
+    //   certifications: "unknown",
+    //   tracklisting: ["unknown"],
+    //   imgUrl: "unknown",
+    // },
   },
 };
 
@@ -544,12 +544,13 @@ app.get("/", (req, res) => {
 });
 
 app.get("/api/:albumName", (request, response) => {
-  const albumName = request.params.albumName.toLowerCase();
-  if (jayzDiscography.albums[albumName]) {
-    response.json(jayzDiscography.albums[albumName]);
-  } else {
-    response.json(jayzDiscography.albums['unknown']);
-  }
+  // const albumName = request.params.albumName.toLowerCase();
+  // if (jayzDiscography.albums[albumName]) {
+  //   response.json(jayzDiscography.albums[albumName]);
+  // } else {
+  //   response.json(jayzDiscography.albums['unknown']);
+  // }
+  response.json(jayzDiscography)
 });
 
 app.listen(process.env.PORT || PORT, () => {
